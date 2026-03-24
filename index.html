@@ -1,213 +1,194 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Songti SC'; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Songti SC'; -webkit-text-stroke: #000000; min-height: 17.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CQ Media Lab | 30大研学矩阵</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        /* 模拟小程序加载动画 */
+        #loading-screen {
+            position: fixed; inset: 0; background: #fff; z-index: 100;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .loader {
+            width: 48px; height: 48px; border: 5px solid #f3f3f3;
+            border-top: 5px solid #2563eb; border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+        .tab-active { color: #2563eb; font-weight: 900; border-bottom: 3px solid #2563eb; }
+        .modal-up { transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;CQ Media Lab | 30大主题深度矩阵&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&amp;display=swap');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: 'Noto Sans SC', sans-serif; background-color: #f1f5f9; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.active-tab { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 900; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px); }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card-active:active { transform: scale(0.96); }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body class="text-slate-900"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;nav class="sticky top-0 z-50 glass border-b border-slate-200 px-6 py-4 flex justify-between items-center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-xl font-black text-slate-800 tracking-tighter"&gt;CQ MEDIA &lt;span class="text-blue-600"&gt;LAB&lt;/span&gt;&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="text-[9px] text-slate-400 font-bold tracking-widest uppercase"&gt;Full 30 Themes Deep Content&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="px-3 py-1 bg-blue-50 rounded-full text-[10px] font-bold text-blue-600 tracking-wider"&gt;传媒创业版&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="flex bg-white sticky top-[68px] z-40 shadow-sm border-b border-slate-100"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="switchTab('science')" id="tab-science" class="flex-1 py-4 text-xs active-tab"&gt;理科·探索 (15)&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="switchTab('arts')" id="tab-arts" class="flex-1 py-4 text-xs text-slate-400"&gt;文科·素养 (15)&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main class="p-4 space-y-4 pb-24" id="content-area"&gt;&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="modal" class="fixed inset-0 z-[60] hidden bg-slate-900/60 backdrop-blur-md flex items-end"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white w-full rounded-t-[2.5rem] max-h-[92vh] overflow-y-auto modal-transition transform translate-y-full shadow-2xl" id="modal-content"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="sticky top-0 bg-white/90 backdrop-blur-md pt-4 pb-2 text-center border-b border-slate-50 z-20"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="w-10 h-1 bg-slate-200 rounded-full mx-auto mb-4"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 id="m-title" class="text-xl font-black px-6 text-slate-800"&gt;&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 space-y-10"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-[10px]"&gt;01&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-black text-sm text-slate-500 uppercase tracking-widest"&gt;课时方案 / Lesson&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="pl-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p id="m-s1" class="text-slate-700 text-sm leading-relaxed font-bold"&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="m-knowledge" class="mt-3 text-xs text-blue-600 bg-blue-50 p-3 rounded-xl border border-blue-100 italic"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="w-6 h-6 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]"&gt;02&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-black text-sm text-slate-500 uppercase tracking-widest"&gt;作业脚本 / Script&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="pl-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p id="m-s2" class="text-slate-700 text-sm leading-relaxed"&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="m-homework" class="mt-3 text-xs text-emerald-700 bg-emerald-50 p-3 rounded-xl border border-emerald-100"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="w-6 h-6 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-[10px]"&gt;03&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-black text-sm text-slate-500 uppercase tracking-widest"&gt;分镜视听 / Design&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="pl-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p id="m-s3" class="text-slate-700 text-sm leading-relaxed mb-4"&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-100"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;img id="m-img" src="" class="w-full h-44 object-cover"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="absolute bottom-3 left-3 bg-black/50 backdrop-blur-md text-[10px] text-white px-2 py-1 rounded"&gt;分镜参考图&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="m-audio" class="mt-4 text-xs text-amber-800 bg-amber-50 p-3 rounded-xl border border-amber-100 flex items-start gap-2"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span&gt;🎵&lt;/span&gt;&lt;span id="m-audio-text"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;section class="pb-6"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="w-6 h-6 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold text-[10px]"&gt;04&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-black text-sm text-slate-500 uppercase tracking-widest"&gt;制作管线 / Production&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="pl-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between text-[10px] font-bold text-slate-400 mb-2 uppercase"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span&gt;Post-Production Pipeline&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span id="m-p-text"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div id="m-p-bar" class="bg-purple-600 h-full transition-all duration-1000"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal()" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black shadow-xl active:scale-95 transition-all"&gt;完成预览&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const studyData = {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>science: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/力学", title: "南滨路桥梁群", s1: "桥梁受力结构分析（拱/吊/斜拉）", kn: "重点：分析不同桥型的重力分配与抗拉伸逻辑。", s2: "脚本：‘小小桥梁师’实拍对比。站在大桥下解说结构。", hm: "任务：拍摄三处不同的桥梁连接件（支座、拉索）。", s3: "分镜：航拍视角叠加蓝色受力线条动效。", au: "BGM：节奏感强的工业电子音乐。", p: 90, img: "https://images.unsplash.com/photo-1545326460-a119558ee32d?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/声学", title: "重庆大剧院", s1: "声波反射与混响时间控制原理。", kn: "知识：了解消音材料与声学反射板的设计。", s2: "脚本：‘声音捕手’。在剧院外测试不同距离的江浪声。", hm: "任务：录制一段剧院回声并分析衰减时长。", s3: "分镜：画面实时模拟声波扩散的扩散圈纹动画。", au: "BGM：纯净的高保真环境原声。", p: 80, img: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "数学/几何", title: "皇冠大扶梯", s1: "30度坡度下的位移与效率计算。", kn: "知识：勾股定理与三角函数在工程中的实测。", s2: "脚本：计算垂直交通运行数据，挑战数学难题。", hm: "任务：实测扶梯运行112米所用的精准时长并核对公式。", s3: "分镜：侧面延时摄影叠加坐标轴与角度标线。", au: "BGM：快速的节拍器律动。", p: 60, img: "https://images.unsplash.com/photo-1519011985187-444d62641929?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/气压", title: "防空洞天然空调", s1: "岩石比热容与温差压强原理。", kn: "重点：理解为什么‘冬暖夏凉’，空气对流的秘密。", s2: "脚本：测量洞内外温湿度曲线，揭秘天然避暑机理。", hm: "任务：手持温度计对比进洞前后50米的数据变化。", s3: "分镜：热力红外视觉后期，展现冷气流向。", au: "BGM：深沉、带有神秘感的低音。", p: 70, img: "https://images.unsplash.com/photo-1505142446710-c3d599302c05?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "化学/反应", title: "重钢钢铁炼成记", s1: "氧化还原反应与金属工业流程。", kn: "知识：炼钢炉里的化学方程式实地重温。", s2: "脚本：‘硬核工业’导赏，讲述钢铁西迁的历史。", hm: "任务：寻找遗址中的三种不同氧化程度的金属。", s3: "分镜：微距拍摄铁锈纹理，叠加动态分子式动画。", au: "BGM：重低音金属打击乐。", p: 100, img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "生物/进化", title: "自然博物馆恐龙", s1: "地层沉积与古生物骨骼还原。", kn: "知识：了解恐龙足迹鉴定与骨骼受力模拟。", s2: "脚本：化身‘恐龙追踪者’，制作化石拓片日记。", hm: "任务：对比三个不同地质年代的化石特征。", s3: "分镜：AR虚拟恐龙与真实化石重叠动画。", au: "BGM：宏大的电影配乐。", p: 85, img: "https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "化学/能源", title: "涪陵页岩气田", s1: "页岩气形成与水力压裂技术。", kn: "重点：地底能源的提取化学及其对环境的影响。", s2: "脚本：‘能源小分队’现场调查，采访钻井工人。", hm: "任务：绘制页岩气在地下的赋存状态图。", s3: "分镜：3D剖面演示地壳结构与裂缝生成。", au: "BGM：充满未来感的合成器音色。", p: 40, img: "https://images.unsplash.com/photo-1516934024747-5973dca43159?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/流体", title: "江津风机叶片", s1: "伯努利原理与动能转换逻辑。", kn: "核心：理解空气流速如何产生升力带动发电机。", s2: "脚本：手作风车效率测试，分析叶片偏转角。", hm: "任务：用测风仪记录不同风力下的叶片转速。", s3: "分镜：风洞仿真线条流体视觉效果。", au: "BGM：轻盈的管乐或风声效果。", p: 50, img: "https://images.unsplash.com/photo-1466611653911-95282fc3656b?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "数学/算法", title: "赛力斯智慧工厂", s1: "自动化生产线与逻辑判断算法。", kn: "重点：传感器如何收集数据并进行毫秒级反馈。", s2: "脚本：采访AI分拣系统的决策逻辑。", hm: "任务：观察并记录一个机械臂完成动作的周期。", s3: "分镜：代码流矩阵效果，高亮显示识别框。", au: "BGM：高科技快节奏鼓点。", p: 30, img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "生物/遗传", title: "潼南太空种子", s1: "空间诱变育种与基因稳定性。", kn: "知识：宇宙辐射如何引发植物基因变异。", s2: "脚本：对比太空蔬菜与普通品种的生长形态。", hm: "任务：测量太空南瓜的直径并预测产量。", s3: "分镜：微观视角下的细胞分裂与基因链重组图。", au: "BGM：空灵、具有空间感的旋律。", p: 45, img: "https://images.unsplash.com/photo-1530836361253-ee2e40cbbbfc?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/光学", title: "观音桥裸眼3D", s1: "视差屏障技术与空间深度感。", kn: "核心：大脑如何通过双眼视差合成三维图像。", s2: "脚本：解密视觉欺骗的艺术，拍摄视角差实验。", hm: "任务：寻找屏幕的‘最佳观测点’并记录坐标。", s3: "分镜：拆解屏幕像素排列，透视辅助线动态化。", au: "BGM：震撼的现代电音。", p: 90, img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "化学/结晶", title: "宁厂古镇熬盐", s1: "饱和溶液、溶解度与结晶现象。", kn: "知识：天然盐泉的矿物质含量与化学分离。", s2: "脚本：记录熬盐实验，讲述千年盐都历史。", hm: "任务：观察并画出盐晶体在显微镜下的形状。", s3: "分镜：延时摄影拍摄食盐晶体生长过程。", au: "BGM：古朴的丝竹乐或民乐。", p: 65, img: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "数学/拓扑", title: "黄桷湾五层立交", s1: "多层空间重叠与路径算法。", kn: "难点：在三维坐标系中进行最短路径规划。", s2: "脚本：挑战5层立交不走错，演示导航底层逻辑。", hm: "任务：在草图上还原五层立交的连接拓扑图。", s3: "分镜：3D路径实时动态标注导航轨迹线。", au: "BGM：轻快且富有秩序感的音乐。", p: 75, img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "生物/水文", title: "两江交汇水质", s1: "河流PH值与重金属沉淀化学。", kn: "核心：理解两江汇合处颜色差异的化学成因。", s2: "脚本：‘环保调查员’，现场提取水样并检测。", hm: "任务：对比嘉陵江与长江水样的浑浊度分层。", s3: "分镜：卫星云图历史演变对比图效果。", au: "BGM：平稳的流水环境音。", p: 55, img: "https://images.unsplash.com/photo-1516675202534-8097f7fe5174?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "物理/受力", title: "石柱吊脚楼", s1: "木建筑榫卯结构力学。", kn: "知识：悬挑式结构的重力平衡与材料稳定性。", s2: "脚本：‘小小建筑师’，拆解并组装榫卯模型。", hm: "任务：寻找吊脚楼支撑点的受力接触面特征。", s3: "分镜：3D动画拆解展示中国古建筑内部结构。", au: "BGM：优雅的古筝或民族乐器。", p: 80, img: "https://images.unsplash.com/photo-1584464455792-74d320473941?w=600" }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>arts: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "历史/战争", title: "合川钓鱼城遗址", s1: "冷兵器防御体系与城墙坡度学。", kn: "重点：利用地形进行防御的军事建筑学逻辑。", s2: "脚本：‘历史真相调查’，沙盘模拟抛物线轨迹。", hm: "任务：通过比例尺测算城墙的平均防御仰角。", s3: "分镜：复古胶片感+史诗感大提琴背景音乐。", au: "BGM：厚重的战争史诗鼓点。", p: 40, img: "https://images.unsplash.com/photo-1599408162489-08a65529989b?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "艺术/建筑", title: "罗中立美术馆", s1: "材料再生美学与色彩心理学。", kn: "核心：废弃陶瓷碎片如何重构当代视觉语言。", s2: "脚本：化身‘艺术评论家’解说拼贴画构图。", hm: "任务：提取美术馆外墙的三组主色调配色方案。", s3: "分镜：极简主义定格摄影，高饱和度滤镜。", au: "BGM：轻快时尚的艺术电子乐。", p: 70, img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "地理/地质", title: "武隆天生三桥", s1: "碳酸钙与酸性水的溶蚀力学。", kn: "核心：喀斯特地貌中‘天坑’形成的闭环化学过程。", s2: "脚本：‘探险家日记’，实地测量天坑跨度。", hm: "任务：记录一处水滴石穿的特写并估算年份。", s3: "分镜：震撼航拍视角+地层演化特效。", au: "BGM：空灵、大气的探险配乐。", p: 85, img: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "社会/文化", title: "十八梯梯坎生活", s1: "城市更新下的社会学变迁。", kn: "重点：母城空间对社区关系与民俗的影响。", s2: "脚本：采访原住民，黑白转彩色的转场蒙太奇。", hm: "任务：拍摄并整理五个不同年代的城市符号。", s3: "分镜：街拍质感，对比历史老照片与现状。", au: "BGM：口琴、老收音机杂音采样。", p: 90, img: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "气象/地理", title: "鹅岭山顶观雾", s1: "盆地湿度与气旋动力学。", kn: "知识：地形如何决定‘雾都’的形成频率。", s2: "脚本：‘气象播报员’实测山底与山顶湿度。", hm: "任务：用画笔勾勒雾气流动的轨迹与山势关系。", s3: "分镜：延时摄影记录云雾翻涌的柔和动画。", au: "BGM：朦胧、梦幻的轻音乐。", p: 50, img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "历史/工业", title: "白象居24层楼", s1: "无电梯高层的重力排布逻辑。", kn: "重点：立体城市的建筑哲学与步行动线设计。", s2: "脚本：体验24层不乘梯的‘赛博朋克’奇迹。", hm: "任务：画出白象居连接不同街道的三个出入口平面图。", s3: "分镜：第一视角穿梭于连廊，增强纵深感。", au: "BGM：Lo-fi 城市节拍。", p: 60, img: "https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "非遗/传承", title: "壹华里点豆腐", s1: "蛋白质变性与胶体聚沉哲学。", kn: "核心：卤水氯化镁如何改变大豆蛋白分子状态。", s2: "脚本：亲手制作非遗豆腐，采访老匠人。", hm: "任务：记录豆腐成块所需的卤水比例与温度。", s3: "分镜：极高帧率拍摄液体凝固的瞬间特写。", au: "BGM：温暖的灶台声采样。", p: 80, img: "https://images.unsplash.com/photo-1584263343369-048511711aa0?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "地理/水文", title: "白鹤梁水下题刻", s1: "古代水文观测与长江枯水线。", kn: "重点：石刻鱼作为古代生产力指标的科学意义。", s2: "脚本：‘水底考古学家’揭秘千年水文数据。", hm: "任务：复刻一个石鱼拓片并对比现今水位。", s3: "分镜：水下摄影+数字光影还原枯水期石梁全貌。", au: "BGM：水滴声、空旷的回响。", p: 45, img: "https://images.unsplash.com/photo-1544551763-47a0159f963f?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "社会/经济", title: "龙门浩开埠商业", s1: "近代外贸史与中西建筑融合。", kn: "核心：通商口岸对重庆近代化商业地理的影响。", s2: "脚本：寻找西洋装饰与中式砖混的融合证据。", hm: "任务：调研并对比三个不同风格的旧领事馆遗址。", s3: "分镜：暖色调怀旧滤镜，慢移镜头拍摄细节。", au: "BGM：老式唱片机质感的萨克斯。", p: 35, img: "https://images.unsplash.com/photo-1513467655676-561b7d489a88?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "艺术/策划", title: "三峡博物馆藏品", s1: "博物馆策展学与光影叙事力。", kn: "重点：文物在特定灯光与动线下传达的时代感。", s2: "脚本：解说镇馆之宝的前世今生。", hm: "任务：为一个文物设计一套适合短视频展示的布光方案。", s3: "分镜：定格动画表现历史演变，快切剪辑。", au: "BGM：恢弘的管弦乐转场。", p: 100, img: "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "地理/交通", title: "李子坝轻轨穿楼", s1: "减震材料力学与城市空间重组。", kn: "知识：橡胶弹簧与空气弹簧如何解决噪音扰民。", s2: "脚本：实测轻轨进站声级，分析规划的合理性。", hm: "任务：测算列车穿过大楼的平均时长与车速关系。", s3: "分镜：第一视角穿越感镜头+楼内楼外双机位对比。", au: "BGM：动感的电车运行音。", p: 95, img: "https://images.unsplash.com/photo-1517404212328-3c0058bdd657?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "历史/民俗", title: "磁器口码头旧事", s1: "嘉陵江航运史与巴渝民俗志。", kn: "核心：码头地理对重庆语言、饮食文化的塑造。", s2: "脚本：采访并手绘古镇地图，寻找老码头坐标。", hm: "任务：整理五个源于码头文化的本地方言词汇。", s3: "分镜：手绘漫画风格与实景拍摄的无缝转场。", au: "BGM：热闹的吆喝声环境音。", p: 55, img: "https://images.unsplash.com/photo-1528699633336-3b0439f17d2c?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "地理/生态", title: "彩云湖湿地过滤", s1: "植物根系对污水的生物净化。", kn: "核心：湿地生态系统中微生物与植物的共生逻辑。", s2: "脚本：绘制湿地生态图，观察污水变清的过程。", hm: "任务：对比进水口与出水口的水样透明度。", s3: "分镜：生态纪录片微观运镜，叠加生物循环链动画。", au: "BGM：清脆的鸟鸣与流水声。", p: 65, img: "https://images.unsplash.com/photo-1511497584788-876760111969?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "社会/创意", title: "北仓老厂改造", s1: "工业遗存改造与创意空间利用。", kn: "重点：旧建筑在二次开发中的结构保留与功能置换。", s2: "脚本：调研并采访入驻文创品牌的设计理念。", hm: "任务：为一个旧机器零件设计一套‘变废为宝’的艺术装置。", s3: "分镜：高对比度工业风VS小清新文艺风的交替快剪。", au: "BGM：轻快、有现代设计感的Lofi乐。", p: 70, img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{ cat: "历史/航空", title: "飞虎队二战史", s1: "空气动力学在老式战机中的体现。", kn: "知识：了解P-40战机的进气口设计与格斗优势。", s2: "脚本：制作一份航空英魂简报，讲述和平代价。", hm: "任务：寻找并绘制一个战机涂装中的符号意义。", s3: "分镜：黑白历史素材转彩色实景，增加年代感。", au: "BGM：远处的螺旋桨轰鸣声。", p: 40, img: "https://images.unsplash.com/photo-1516146483826-54e3624bc240?w=600" }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function switchTab(type) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('tab-science').className = type === 'science' ? 'flex-1 py-4 text-xs active-tab' : 'flex-1 py-4 text-xs text-slate-400';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('tab-arts').className = type === 'arts' ? 'flex-1 py-4 text-xs active-tab' : 'flex-1 py-4 text-xs text-slate-400';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>render(type);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function render(type) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const container = document.getElementById('content-area');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>container.innerHTML = studyData[type].map((item, idx) =&gt; `</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div onclick="openModal('${type}', ${idx})" class="card-active bg-white p-4 rounded-3xl shadow-sm border border-slate-100 flex items-center gap-4 transition-all active:bg-slate-50"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="${item.img}" class="w-16 h-16 rounded-2xl object-cover shadow-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex-1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between items-start"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[9px] font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded tracking-tighter uppercase"&gt;${item.cat}&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[9px] font-bold text-slate-300"&gt;#${idx+1}&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-sm font-black text-slate-800 mt-1"&gt;${item.title}&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-2 w-full bg-slate-100 h-1 rounded-full overflow-hidden"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-blue-600 h-full transition-all duration-1000" style="width: ${item.p}%"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="text-slate-300"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`).join('');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function openModal(type, idx) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const item = studyData[type][idx];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-title').innerText = item.title;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-s1').innerText = item.s1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-knowledge').innerText = item.kn;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-s2').innerText = item.s2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-homework').innerText = item.hm;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-s3').innerText = item.s3;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-audio-text').innerText = item.au;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-img').src = item.img;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-p-bar').style.width = item.p + '%';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('m-p-text').innerText = item.p + '% 完成度';</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const modal = document.getElementById('modal');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const content = document.getElementById('modal-content');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>modal.classList.remove('hidden');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; content.classList.remove('translate-y-full'), 10);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function closeModal() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const content = document.getElementById('modal-content');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content.classList.add('translate-y-full');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; document.getElementById('modal').classList.add('hidden'), 400);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>render('science');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<body class="bg-slate-50">
+
+    <div id="loading-screen">
+        <div class="loader mb-4"></div>
+        <h2 class="text-slate-800 font-bold tracking-widest">CQ MEDIA LAB</h2>
+        <p class="text-slate-400 text-[10px] mt-2 uppercase tracking-tighter">正在接入30大研学产品矩阵...</p>
+    </div>
+
+    <nav class="sticky top-0 z-40 glass border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-xl font-black text-slate-800 tracking-tighter">CQ MEDIA <span class="text-blue-600">LAB</span></h1>
+            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">30 Themes Matrix v1.0</p>
+        </div>
+        <div class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center">
+            <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+        </div>
+    </nav>
+
+    <div class="flex bg-white sticky top-[68px] z-30 shadow-sm border-b border-slate-100 text-sm">
+        <button onclick="switchTab('science')" id="t-sci" class="flex-1 py-4 tab-active transition-all">理科·探索 (15)</button>
+        <button onclick="switchTab('arts')" id="t-art" class="flex-1 py-4 text-slate-400 transition-all">文科·素养 (15)</button>
+    </div>
+
+    <main class="p-4 space-y-3 pb-24" id="main-list"></main>
+
+    <div id="modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-end">
+        <div id="modal-content" class="bg-white w-full rounded-t-[2.5rem] max-h-[90vh] overflow-y-auto modal-up transform translate-y-full shadow-2xl">
+            <div class="sticky top-0 bg-white/95 pt-4 pb-2 z-10 border-b border-slate-50 text-center">
+                <div class="w-12 h-1 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                <h2 id="m-title" class="text-xl font-black text-slate-800 px-6 italic"></h2>
+            </div>
+
+            <div class="p-6 space-y-8">
+                <section>
+                    <label class="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">01 课时方案 / Lesson</label>
+                    <p id="m-s1" class="mt-3 text-slate-700 text-sm leading-relaxed font-bold"></p>
+                    <p id="m-kn" class="mt-2 text-xs text-slate-400 leading-relaxed border-l-2 border-slate-200 pl-3"></p>
+                </section>
+
+                <section>
+                    <label class="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">02 作业脚本 / Script</label>
+                    <p id="m-s2" class="mt-3 text-slate-700 text-sm leading-relaxed"></p>
+                    <div id="m-hm" class="mt-3 p-3 bg-emerald-50/50 rounded-xl text-xs text-emerald-700 border border-emerald-100 italic font-medium"></div>
+                </section>
+
+                <section>
+                    <label class="text-[10px] font-black text-amber-600 uppercase tracking-widest bg-amber-50 px-2 py-1 rounded">03 分镜视听 / Design</label>
+                    <p id="m-s3" class="mt-3 text-slate-700 text-sm leading-relaxed mb-4"></p>
+                    <div class="rounded-2xl overflow-hidden border-4 border-white shadow-lg">
+                        <img id="m-img" src="" class="w-full h-48 object-cover">
+                    </div>
+                </section>
+
+                <section class="pb-6">
+                    <label class="text-[10px] font-black text-purple-600 uppercase tracking-widest bg-purple-50 px-2 py-1 rounded">04 制作进度 / Pipeline</label>
+                    <div class="mt-4 flex justify-between text-[10px] font-bold text-slate-400 mb-2">
+                        <span>POST-PRODUCTION</span>
+                        <span id="m-p-val" class="text-purple-600"></span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                        <div id="m-p-bar" class="h-full bg-gradient-to-r from-purple-500 to-indigo-600 transition-all duration-1000"></div>
+                    </div>
+                </section>
+
+                <button onclick="closeModal()" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black shadow-xl active:scale-95 transition-all">返回矩阵列表</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 核心数据：30个主题全量内容
+        const data = {
+            science: [
+                { title: "武隆：地心历险记", cat: "地质/力学", s1: "溶蚀力学与喀斯特地貌成因。", kn: "核心：碳酸钙与酸性水的化学反应平衡。", s2: "脚本：探险家日记风格，实地测量地缝宽度。", hm: "作业：寻找三处水滴石穿的特写并拍摄。", s3: "分镜：百米深坑航拍，叠加地层垂直切面动效。", p: 85, img: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800" },
+                { title: "南滨路：桥梁博览", cat: "物理/受力", s1: "拱桥、斜拉桥、悬索桥受力对比。", kn: "核心：力矩平衡与张力传播路径分析。", s2: "脚本：小小桥梁师，实地解说桥墩连接件作用。", hm: "作业：画出三类大桥的受力简图。", s3: "分镜：航拍视角下，桥梁受力点动态亮起效果。", p: 90, img: "https://images.unsplash.com/photo-1545326460-a119558ee32d?w=800" },
+                { title: "大剧院：消音黑匣子", cat: "物理/声学", s1: "声波反射与混响时间控制。", kn: "核心：消音材料与建筑内部声学板排列。", s2: "脚本：声音捕手，实测剧院内外分贝分级。", hm: "作业：录制剧院回声并测试衰减时长。", s3: "分镜：画面实时模拟声波扩散波纹动画。", p: 80, img: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800" },
+                { title: "皇冠大扶梯：几何学", cat: "数学/几何", s1: "30度坡度下的位移与效率。", kn: "核心：三角函数在大型城市基建中的应用。", s2: "脚本：挑战数学题，实测运行112米所需的时长。", hm: "作业：计算扶梯每秒上升的垂直高度。", s3: "分镜：侧面延时摄影，叠加坐标轴与角度标线。", p: 60, img: "https://images.unsplash.com/photo-1519011985187-444d62641929?w=800" },
+                { title: "重钢遗址：钢铁炼成", cat: "化学/反应", s1: "氧化还原反应与工业高炉流程。", kn: "核心：Fe2O3 还原为 Fe 的化学动力学。", s2: "脚本：硬核工业导赏，讲述钢铁西迁历史。", hm: "作业：寻找遗址中三种不同氧化程度的金属。", s3: "分镜：微距拍摄铁锈，叠加动态化学方程式动画。", p: 100, img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" },
+                { title: "自然博物馆：追踪者", cat: "生物/进化", s1: "地层沉积与古生物骨骼还原。", kn: "核心：化石鉴定与骨骼受力模拟还原逻辑。", s2: "脚本：恐龙追踪者，制作化石拓片日记。", hm: "作业：对比三个不同年代的化石骨架特征。", s3: "分镜：AR虚拟恐龙与真实化石重叠呼吸感动画。", p: 85, img: "https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?w=800" },
+                { title: "防空洞：天然空调", cat: "物理/气压", s1: "岩石比热容与温差压强原理。", kn: "核心：空气对流与地下空间热力学循环。", s2: "脚本：测量洞内外温湿度曲线，揭秘避暑原理。", hm: "作业：每隔10米记录一次温湿度计读数。", s3: "分镜：热力红外视觉后期，展现冷空气流动轨迹。", p: 70, img: "https://images.unsplash.com/photo-1505142446710-c3d599302c05?w=800" },
+                { title: "涪陵：地底气火", cat: "化学/能源", s1: "页岩气形成与水力压裂技术。", kn: "核心：地下页岩层的微观孔隙结构分析。", s2: "脚本：能源小分队，采访钻井平台的运作。", hm: "作业：绘制地底三千米的能源赋存示意图。", s3: "分镜：3D剖面演示地壳结构与裂缝生成特效。", p: 40, img: "https://images.unsplash.com/photo-1516934024747-5973dca43159?w=800" },
+                { title: "智慧工厂：机器人", cat: "数学/算法", s1: "自动化生产线与逻辑算法。", kn: "核心：激光雷达扫描与机器视觉识别路径。", s2: "脚本：采访AI分拣系统的决策决策逻辑。", hm: "作业：记录机械臂完成一个闭环动作的周期。", s3: "分镜：代码流矩阵效果，高亮显示识别框特效。", p: 30, img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" },
+                { title: "太空种子：变异植物", cat: "生物/遗传", s1: "空间诱变育种与基因稳定性。", kn: "核心：宇宙辐射如何引发植物基因链重排。", s2: "脚本：对比太空蔬菜与普通品种的生长形态。", hm: "作业：测量并记录太空南瓜的形态变异点。", s3: "分镜：微观视角下的基因链断裂与重组动画。", p: 45, img: "https://images.unsplash.com/photo-1530836361253-ee2e40cbbbfc?w=800" },
+                { title: "观音桥：裸眼3D", cat: "物理/光学", s1: "视差屏障技术与空间深度感。", kn: "核心：两眼视差如何在大脑形成3D纵深错觉。", s2: "脚本：解密视觉欺骗，拍摄不同视角的视差差。", hm: "作业：寻找屏幕的最佳观测点坐标。", s3: "分镜：拆解像素排列，叠加透视辅助线动态化。", p: 90, img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800" },
+                { title: "宁厂古镇：盐泉", cat: "化学/结晶", s1: "饱和溶液、溶解度与结晶。", kn: "核心：天然卤水的矿物含量与浓缩结晶逻辑。", s2: "脚本：记录熬盐实验，讲述千年盐都历史。", hm: "作业：用放大镜观察盐晶体的几何形状。", s3: "分镜：延时摄影拍摄食盐晶体生长过程。", p: 65, img: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=800" },
+                { title: "黄桷湾：拓扑立交", cat: "数学/拓扑", s1: "多层空间重叠与路径算法。", kn: "核心：非平面几何中的最短路径规划决策。", s2: "脚本：挑战5层立交不走错，演示导航底层。", hm: "作业：在纸上还原五层立交的连接拓扑结构。", s3: "分镜：3D路径实时动态标注导航轨迹线特效。", p: 75, img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800" },
+                { title: "两江交汇：水质", cat: "生物/水文", s1: "PH值测试与重金属沉淀。", kn: "核心：两条河流含沙量差异形成的界面现象。", s2: "脚本：环保调查员，现场提取两江水样对比。", hm: "作业：测试水样的透明度并进行24小时静置。", s3: "分镜：卫星云图对比几十年来江面颜色变化。", p: 55, img: "https://images.unsplash.com/photo-1516675202534-8097f7fe5174?w=800" },
+                { title: "吊脚楼：榫卯力学", cat: "物理/受力", s1: "木建筑结构力学与稳定性。", kn: "核心：悬挑式结构的重心偏移与支点支撑。", s2: "脚本：小小建筑师，组装榫卯模型演示力传导。", hm: "作业：寻找吊脚楼中的主受力柱并分析磨损。", s3: "分镜：3D动画拆解展示中国古建筑内部结构。", p: 80, img: "https://images.unsplash.com/photo-1584464455792-74d320473941?w=800" }
+            ],
+            arts: [
+                { title: "钓鱼城：世界支点", cat: "历史/军事", s1: "冷兵器防御体系与建筑学。", kn: "核心：一字城墙的防御死角与抛物线弹道推演。", s2: "脚本：历史真相调查，沙盘模拟古战场攻防。", hm: "作业：测算城墙的平均防御仰角。", s3: "分镜：复古胶片感叠加历史战争场景半透明CG。", p: 40, img: "https://images.unsplash.com/photo-1599408162489-08a65529989b?w=800" },
+                { title: "罗中立美术馆", cat: "艺术/美学", s1: "材料再生美学与色彩心理。", kn: "核心：碎瓷片拼贴中的像素化视觉重构。", s2: "脚本：艺术评论家解说拼贴画背后的乡村哲学。", hm: "作业：提取美术馆外墙的三组对比色配色。", s3: "分镜：极简主义构图，高饱和度滤镜增强质感。", p: 70, img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800" },
+                { title: "武隆：天生三桥", cat: "地理/地质", s1: "喀斯特地貌中溶蚀洞穴演化。", kn: "核心：碳酸钙与地下水的千禧年化学侵蚀闭环。", s2: "脚本：探险家日记，实地测量桥洞高度跨度。", hm: "作业：寻找并记录一处石钟乳的生长特写。", s3: "分镜：震撼航拍视角，后期生成地层演化模拟。", p: 85, img: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800" },
+                { title: "十八梯：母城记忆", cat: "社会/文化", s1: "城市更新下的社会变迁学。", kn: "核心：梯坎空间对邻里关系与商业地理的影响。", s2: "脚本：采访原住民，黑白转彩色的转场蒙太奇。", hm: "作业：收集五个具有年代感的城市视觉符号。", s3: "分镜：街拍质感，历史老照片与现状的对冲感。", p: 90, img: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800" },
+                { title: "鹅岭：山顶观雾", cat: "地理/气象", s1: "两江盆地湿度与气旋动力。", kn: "核心：地形对逆温层形成与大雾天气的诱发。", s2: "脚本：气象播报员，实测山脚与山顶湿度差。", hm: "作业：绘制雾气流动的路径示意图。", s3: "分镜：延时摄影记录云雾，叠加气流引导箭头。", p: 50, img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800" },
+                { title: "白象居：24层楼", cat: "历史/建筑", s1: "立体城市先行者建筑逻辑。", kn: "核心：无电梯高层的重力分布与步行动线设计。", s2: "脚本：体验24层不乘梯奇迹，揭秘交通联通点。", hm: "作业：画出白象居连接不同街道的出入口平面。", s3: "分镜：第一视角穿梭连廊，展现赛博朋克纵深。", p: 60, img: "https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?w=800" },
+                { title: "壹华里：点豆腐", cat: "非遗/传承", s1: "蛋白质变性与胶体聚沉。", kn: "核心：氯化镁离子如何诱导豆浆胶体平衡破坏。", s2: "脚本：制作非遗豆腐，采访老师傅的调配秘笈。", hm: "作业：记录豆浆凝固所需的最佳温控曲线。", s3: "分镜：慢动作拍摄液体凝固的微观瞬间。", p: 80, img: "https://images.unsplash.com/photo-1584263343369-048511711aa0?w=800" },
+                { title: "白鹤梁：石鱼刻", cat: "地理/水文", s1: "古代水文观测与枯水线记录。", kn: "核心：石鱼题刻作为古代水利生产的科学指标。", s2: "脚本：水底考古学家，揭秘千年江底的数据。", hm: "作业：对比石刻记录与今年长江实时水位线。", s3: "分镜：水下摄影叠加数字拓片全貌还原动效。", p: 45, img: "https://images.unsplash.com/photo-1544551763-47a0159f963f?w=800" },
+                { title: "龙门浩：开埠商业", cat: "历史/经济", s1: "近代外贸史与中西建筑融合。", kn: "核心：通商口岸地理对重庆商业近代化的影响。", s2: "脚本：寻找西洋装饰与中式砖混的融合细节。", hm: "作业：调研三个旧领事馆遗址的不同风格。", s3: "分镜：暖色调怀旧滤镜，慢移拍摄建筑细节。", p: 35, img: "https://images.unsplash.com/photo-1513467655676-561b7d489a88?w=800" },
+                { title: "三峡博物馆：策划", cat: "艺术/展览", s1: "博物馆策展学与叙事光影。", kn: "核心：文物动线设计对历史沉浸感的塑造。", s2: "脚本：解说镇馆之宝，讲述大国重器的前世。", hm: "作业：为一个文物设计短视频布光方案。", s3: "分镜：定格动画表现历史演进，视觉冲击剪辑。", p: 100, img: "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800" },
+                { title: "李子坝：穿楼轻轨", cat: "交通/地理", s1: "减震力学与城市空间重组。", kn: "核心：橡胶弹簧对高频振动的吸收与噪音隔离。", s2: "脚本：实测轻轨进站分贝，分析减震效率。", hm: "作业：测算列车穿过大楼的平均时速。", s3: "分镜：第一视角穿楼镜头与楼内视角同步剪辑。", p: 95, img: "https://images.unsplash.com/photo-1517404212328-3c0058bdd657?w=800" },
+                { title: "磁器口：码头旧事", cat: "历史/民俗", s1: "嘉陵江航运与巴渝民俗文化。", kn: "核心：码头地理对重庆语言、饮食的底层塑造。", s2: "脚本：手绘古镇地图，寻找老码头的历史坐标。", hm: "作业：整理五个源于码头文化的本地方言词。", s3: "分镜：手绘漫画风格与实景拍摄的无缝切换。", p: 55, img: "https://images.unsplash.com/photo-1528699633336-3b0439f17d2c?w=800" },
+                { title: "彩云湖：湿地过滤", cat: "地理/生态", s1: "植物根系对污水的生物净化。", kn: "核心：湿地生态中微生物与植物的共生逻辑。", s2: "脚本：绘制湿地生态图，演示污水净化的物理。", hm: "作业：对比进出水口的水样PH值与浑浊度。", s3: "分镜：生态纪录片运镜，叠加生物循环链动画。", p: 65, img: "https://images.unsplash.com/photo-1511497584788-876760111969?w=800" },
+                { title: "北仓：老厂复兴", cat: "社会/创意", s1: "工业遗存改造与功能重置。", kn: "核心：旧建筑在二次开发中的结构安全性分析。", s2: "脚本：调研文创品牌理念，采访入驻设计师。", hm: "作业：设计一个旧零件的“变废为宝”艺术草案。", s3: "分镜：工业风与时尚风的交替快剪，强节奏感。", p: 70, img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" },
+                { title: "飞虎队：二战遗址", cat: "历史/航空", s1: "空气动力学与老式战机史。", kn: "核心：P-40战机的格斗优势与气动外形设计。", s2: "脚本：制作航空英魂简报，讲述抗战飞虎往事。", hm: "作业：寻找战机涂装中三处不同的识别符号。", s3: "分镜：黑白素材转彩色实景，增加历史深度。", p: 40, img: "https://images.unsplash.com/photo-1516146483826-54e3624bc240?w=800" }
+            ]
+        };
+
+        // 初始化动画
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => document.getElementById('loading-screen').style.display = 'none', 500);
+            }, 1800);
+            render('science');
+        };
+
+        function switchTab(type) {
+            document.getElementById('t-sci').className = type === 'science' ? 'flex-1 py-4 tab-active' : 'flex-1 py-4 text-slate-400';
+            document.getElementById('t-art').className = type === 'arts' ? 'flex-1 py-4 tab-active' : 'flex-1 py-4 text-slate-400';
+            render(type);
+        }
+
+        function render(type) {
+            const list = document.getElementById('main-list');
+            list.innerHTML = data[type].map((item, idx) => `
+                <div onclick="openModal('${type}', ${idx})" class="bg-white p-4 rounded-3xl shadow-sm border border-slate-100 flex items-center gap-4 active:scale-95 transition-all">
+                    <img src="${item.img}" class="w-14 h-14 rounded-2xl object-cover shadow-inner">
+                    <div class="flex-1">
+                        <span class="text-[8px] font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded tracking-tighter uppercase">${item.cat}</span>
+                        <h3 class="text-sm font-black text-slate-800 mt-0.5">${item.title}</h3>
+                        <div class="mt-2 w-full bg-slate-50 h-1 rounded-full overflow-hidden">
+                            <div class="bg-blue-600 h-full" style="width: ${item.p}%"></div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            `).join('');
+        }
+
+        function openModal(type, idx) {
+            const item = data[type][idx];
+            document.getElementById('m-title').innerText = item.title;
+            document.getElementById('m-s1').innerText = item.s1;
+            document.getElementById('m-kn').innerText = item.kn;
+            document.getElementById('m-s2').innerText = item.s2;
+            document.getElementById('m-hm').innerText = `学生作业：${item.hm}`;
+            document.getElementById('m-s3').innerText = item.s3;
+            document.getElementById('m-img').src = item.img;
+            document.getElementById('m-p-val').innerText = `${item.p}%`;
+            document.getElementById('m-p-bar').style.width = `${item.p}%`;
+
+            const m = document.getElementById('modal');
+            const c = document.getElementById('modal-content');
+            m.classList.remove('hidden');
+            setTimeout(() => c.classList.remove('translate-y-full'), 50);
+        }
+
+        function closeModal() {
+            const c = document.getElementById('modal-content');
+            c.classList.add('translate-y-full');
+            setTimeout(() => document.getElementById('modal').classList.add('hidden'), 400);
+        }
+    </script>
 </body>
 </html>
